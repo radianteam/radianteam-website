@@ -33,4 +33,4 @@ jobs:
           cp -r ../web/ ./
           git add .
           git commit -m "autodeploy"
-          git push origin main --set-upstream https://radianteam:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
+          git push https://$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
