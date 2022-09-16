@@ -28,6 +28,7 @@ jobs:
           cd build/
           git clone https://github.com/radianteam/radianteam.github.io.git
           cd radianteam.github.io/
+          rm -rf *
           git config --global user.email "radianlmsteam@gmail.com"
           git config --global user.name "radianteam"
           cp -r ../web/* ./
