@@ -30,7 +30,7 @@ jobs:
           cd radianteam.github.io/
           git config --global user.email "radianlmsteam@gmail.com"
           git config --global user.name "radianteam"
-          cp -r ../web/ ./
+          cp -r ../web/* ./
           git add .
           git commit -m "autodeploy"
           git push https://$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
