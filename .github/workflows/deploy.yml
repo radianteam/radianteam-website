@@ -1,4 +1,4 @@
-name: Dart
+name: Deploy
 
 on:
   push:
@@ -20,6 +20,7 @@ jobs:
       - run: flutter test
       - run: flutter build web
       - run: cd build/
+      - run: ls
       - env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
         run: git clone https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
@@ -29,4 +30,4 @@ jobs:
       - env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
         run: git push origin main --set-upstream https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
-        
+
