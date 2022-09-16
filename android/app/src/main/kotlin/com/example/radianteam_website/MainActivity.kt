@@ -1,6 +1,0 @@
-package com.example.radianteam_website
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity: FlutterActivity() {
-}
