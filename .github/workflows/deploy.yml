@@ -31,5 +31,6 @@ jobs:
           git config --global user.email "radianlmsteam@gmail.com"
           git config --global user.name "radianteam"
           cp -r ../web/ ./
+          git add .
           git commit -m "autodeploy"
           git push origin main --set-upstream https://radianteam:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
