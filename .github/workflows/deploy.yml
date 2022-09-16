@@ -17,17 +17,17 @@ jobs:
           flutter-version: '3.3.2'
           channel: 'stable'
       - run: flutter pub get
-      - run: flutter test
-      - run: flutter build web
-      - run: cd build/
-      - run: ls
-      - env:
+      - name: Tests
+        run: flutter test
+      - name: Build
+        run: flutter build web
+      - name: Deploy
+        env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
-        run: git clone https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
-      - run: cd radianteam.github.io/
-      - run: cp -r ../web/ ./
-      - run: git commit -m "autodeploy"
-      - env:
-          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
-        run: git push origin main --set-upstream https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
-
+        run: |
+          cd build/
+          git clone https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
+          cd radianteam.github.io/
+          cp -r ../web/ ./
+          git commit -m "autodeploy"
+          git push origin main --set-upstream https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
