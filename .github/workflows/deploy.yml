@@ -26,8 +26,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
         run: |
           cd build/
-          git clone https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
+          git clone https://github.com/radianteam/radianteam.github.io.git
           cd radianteam.github.io/
+          git config --global user.email "radianlmsteam@gmail.com"
+          git config --global user.name "radianteam"
           cp -r ../web/ ./
           git commit -m "autodeploy"
-          git push origin main --set-upstream https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
+          git push origin main --set-upstream https://radianteam:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
