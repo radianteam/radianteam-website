@@ -1,0 +1,32 @@
+name: Dart
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.3.2'
+          channel: 'stable'
+      - run: flutter pub get
+      - run: flutter test
+      - run: flutter build web
+      - run: cd build/
+      - env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+        run: git clone https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
+      - run: cd radianteam.github.io/
+      - run: cp -r ../web/ ./
+      - run: git commit -m "autodeploy"
+      - env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}
+        run: git push origin main --set-upstream https://user:$GITHUB_TOKEN@github.com/radianteam/radianteam.github.io.git
+        
