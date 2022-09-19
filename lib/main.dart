@@ -9,7 +9,10 @@ import 'package:radianteam_website/pages/projects.dart';
 import 'package:radianteam_website/pages/sourcecode.dart';
 import 'package:radianteam_website/pages/team.dart';
 
+import 'package:flutter_web_plugins/url_strategy.dart';
+
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -19,68 +22,17 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        MainPage.route: (context) => const MainPage(),
-        FrameworkPage.route: (context) => const FrameworkPage(),
-        ComponentsPage.route: (context) => const ComponentsPage(),
-        ProjectsPage.route: (context) => const ProjectsPage(),
-        NonCommercialPage.route: (context) => const NonCommercialPage(),
-        IdeasPage.route: (context) => const IdeasPage(),
-        TeamPage.route: (context) => const TeamPage(),
-        SourceCodePage.route: (context) => const SourceCodePage(),
-        ContactUsPage.route: (context) => const ContactUsPage()
-      },
-      onGenerateRoute: (settings) {
-        if (settings.name == MainPage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const MainPage());
-        }
-
-        if (settings.name == FrameworkPage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const FrameworkPage());
-        }
-
-        if (settings.name == ComponentsPage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const ComponentsPage());
-        }
-
-        if (settings.name == ProjectsPage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const ProjectsPage());
-        }
-
-        if (settings.name == NonCommercialPage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const NonCommercialPage());
-        }
-
-        if (settings.name == IdeasPage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const IdeasPage());
-        }
-
-        if (settings.name == TeamPage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const TeamPage());
-        }
-
-        if (settings.name == SourceCodePage.route) {
-          return PageRouteBuilder(
-              pageBuilder: (_, __, ___) => const SourceCodePage());
-        }
-
-        if (settings.name == ContactUsPage.route) {
-          return PageRouteBuilder(
-              transitionDuration: const Duration(milliseconds: 0),
-              pageBuilder: (_, __, ___) => const ContactUsPage());
-        }
-
-        return null;
-      },
-    );
+    return MaterialApp(routes: {
+      MainPage.route: (context) => const MainPage(),
+      FrameworkPage.route: (context) => const FrameworkPage(),
+      ComponentsPage.route: (context) => const ComponentsPage(),
+      ProjectsPage.route: (context) => const ProjectsPage(),
+      NonCommercialPage.route: (context) => const NonCommercialPage(),
+      IdeasPage.route: (context) => const IdeasPage(),
+      TeamPage.route: (context) => const TeamPage(),
+      SourceCodePage.route: (context) => const SourceCodePage(),
+      ContactUsPage.route: (context) => const ContactUsPage()
+    });
   }
 }
 
