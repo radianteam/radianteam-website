@@ -30,18 +30,40 @@ class TopBar extends StatelessWidget {
         child: Column(
       children: [
         Row(
-          children: const [
+          children: [
             MainMenuButton(
               text: 'Framework',
+              items: const [
+                'Concept',
+                '4 types of interaction',
+                'Architecture',
+                'Adapters',
+                'Workers'
+              ],
             ),
             MainMenuButton(
               text: 'Components',
+              items: const ['Notifications', 'Headless LMS', 'API Gateway'],
             ),
             MainMenuButton(
               text: 'Projects',
+              items: const [
+                'Learning management System',
+                'Learning Experience Platform',
+                'SupperApp',
+                'Smart Assistant',
+                'Open DVR',
+                'Multiagent system'
+              ],
             ),
             MainMenuButton(
               text: 'Non-commercial',
+              items: const [
+                'Happy bank',
+                'Queue management',
+                'Wish list',
+                'URL shortener'
+              ],
             ),
             MainMenuButton(
               text: 'Ideas',
