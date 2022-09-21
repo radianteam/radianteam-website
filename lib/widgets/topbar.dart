@@ -1,12 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/pages/contactus.dart';
-import 'package:radianteam_website/widgets/topbaritems/framework.dart';
-import 'package:radianteam_website/widgets/topbaritems/components.dart';
-import 'package:radianteam_website/widgets/topbaritems/projects.dart';
-import 'package:radianteam_website/widgets/topbaritems/noncommercial.dart';
-import 'package:radianteam_website/pages/ideas.dart';
-import 'package:radianteam_website/pages/sourcecode.dart';
-import 'package:radianteam_website/pages/team.dart';
+import 'package:radianteam_website/components/mainmenubutton.dart';
 
 import 'dart:html' as html;
 
@@ -37,18 +30,31 @@ class TopBar extends StatelessWidget {
         child: Column(
       children: [
         Row(
-          children: [
-            const FrameworkMenuItem(),
-            const ComponentsMenuItem(),
-            const ProjectsMenuItem(),
-            const NonCommercialMenuItem(),
-            buildMenuButton(
-                context, const IdeasPage(), IdeasPage.route, "Ideas"),
-            buildMenuButton(context, const TeamPage(), TeamPage.route, "Team"),
-            buildMenuButton(context, const SourceCodePage(),
-                SourceCodePage.route, "Source code"),
-            buildMenuButton(context, const ContactUsPage(), ContactUsPage.route,
-                "Contact us"),
+          children: const [
+            MainMenuButton(
+              text: 'Framework',
+            ),
+            MainMenuButton(
+              text: 'Components',
+            ),
+            MainMenuButton(
+              text: 'Projects',
+            ),
+            MainMenuButton(
+              text: 'Non-commercial',
+            ),
+            MainMenuButton(
+              text: 'Ideas',
+            ),
+            MainMenuButton(
+              text: 'Team',
+            ),
+            MainMenuButton(
+              text: 'Source code',
+            ),
+            MainMenuButton(
+              text: 'Contact us',
+            ),
           ],
         )
       ],
