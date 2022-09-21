@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 class MainMenuButton extends StatefulWidget {
   final String text;
   final List<String>? items;
+  final String? route;
   late final Widget subMenu;
 
-  MainMenuButton({super.key, required this.text, this.items}) {
+  MainMenuButton({super.key, required this.text, this.items, this.route}) {
     if (items != null) {
       List<Widget> sbmnu = [];
       for (var i = 0; i < ((items?.length) ?? 0); i++) {
         sbmnu.add(InkWell(
           child: Padding(
-              padding: const EdgeInsets.all(10), child: Text(items![i])),
+              padding: const EdgeInsets.all(15), child: Text(items![i])),
         ));
       }
       subMenu = Material(
@@ -35,8 +36,7 @@ class _MainMenuButtonState extends State<MainMenuButton> {
   void showSubMenu() {
     if (widget.items != null) {
       RenderBox box = context.findRenderObject() as RenderBox;
-      Offset position =
-          box.localToGlobal(Offset.zero); //this is global position
+      Offset position = box.localToGlobal(Offset.zero);
 
       overlayEntry = OverlayEntry(
         builder: (BuildContext context) {
@@ -71,9 +71,13 @@ class _MainMenuButtonState extends State<MainMenuButton> {
           isHover = val;
         });
       },
-      onTap: () {},
+      onTap: () {
+        if (widget.route != null) {
+          Navigator.pushNamed(context, widget.route ?? '/');
+        }
+      },
       child: Padding(
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.all(15),
         child: Text(widget.text),
       ),
     );

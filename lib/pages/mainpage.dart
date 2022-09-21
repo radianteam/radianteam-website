@@ -8,15 +8,9 @@ class MainPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const TopBar(),
-        const Text('Main page'),
-        Expanded(
-            child: Container(
-          color: Colors.red,
-        ))
-      ],
-    );
+    return Column(children: [
+      const TopBar(),
+      Expanded(child: Container(color: Colors.white))
+    ]);
   }
 }
