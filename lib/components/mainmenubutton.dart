@@ -29,31 +29,48 @@ class MainMenuButton extends StatefulWidget {
 
 class _MainMenuButtonState extends State<MainMenuButton> {
   bool isHover = false;
+  bool isSubMenuHover = false;
+  bool isMenuShown = false;
 
   final LayerLink layerLink = LayerLink();
   OverlayEntry? overlayEntry;
 
-  void showSubMenu() {
-    if (widget.items != null) {
-      RenderBox box = context.findRenderObject() as RenderBox;
-      Offset position = box.localToGlobal(Offset.zero);
+  void controllSubMenu() {
+    if (isHover || isSubMenuHover) {
+      if (!isMenuShown) {
+        if (widget.items != null) {
+          RenderBox box = context.findRenderObject() as RenderBox;
+          Offset position = box.localToGlobal(Offset.zero);
 
-      overlayEntry = OverlayEntry(
-        builder: (BuildContext context) {
-          return Positioned(
-            top: position.dy + box.size.height,
-            left: position.dx,
-            child: widget.subMenu,
+          overlayEntry = OverlayEntry(
+            builder: (BuildContext context) {
+              return Positioned(
+                  top: position.dy + box.size.height,
+                  left: position.dx,
+                  child: Material(
+                      child: InkWell(
+                    onTap: () {},
+                    onHover: (val) {
+                      setState(() {
+                        isSubMenuHover = val;
+                      });
+
+                      controllSubMenu();
+                    },
+                    child: widget.subMenu,
+                  )));
+            },
           );
-        },
-      );
 
-      Overlay.of(context)!.insert(overlayEntry!);
+          isMenuShown = true;
+
+          Overlay.of(context)!.insert(overlayEntry!);
+        }
+      }
+    } else {
+      overlayEntry?.remove();
+      isMenuShown = false;
     }
-  }
-
-  void hideSubMenu() {
-    overlayEntry?.remove();
   }
 
   @override
@@ -61,15 +78,11 @@ class _MainMenuButtonState extends State<MainMenuButton> {
     return InkWell(
       hoverColor: Colors.grey,
       onHover: (val) {
-        if (val) {
-          showSubMenu();
-        } else {
-          hideSubMenu();
-        }
-
         setState(() {
           isHover = val;
         });
+
+        controllSubMenu();
       },
       onTap: () {
         if (widget.route != null) {

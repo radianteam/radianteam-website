@@ -3,8 +3,6 @@ import 'package:radianteam_website/components/mainmenubutton.dart';
 import 'package:radianteam_website/pages/components.dart';
 import 'package:radianteam_website/pages/contactus.dart';
 
-import 'dart:html' as html;
-
 import 'package:radianteam_website/pages/framework.dart';
 import 'package:radianteam_website/pages/ideas.dart';
 import 'package:radianteam_website/pages/noncommercial.dart';
@@ -27,7 +25,7 @@ class TopBar extends StatelessWidget {
                 Navigator.pushNamed(context, '/');
               },
               child: const Padding(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(10),
                 child: Text('Radian', style: TextStyle(fontSize: 20)),
               ),
             ),
