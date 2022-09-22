@@ -4,23 +4,32 @@ class MainMenuButton extends StatefulWidget {
   final String text;
   final List<String>? items;
   final String? route;
-  late final Widget subMenu;
+  late final List<Widget> sbmnu = [];
+  late final double maxWidth;
 
   MainMenuButton({super.key, required this.text, this.items, this.route}) {
-    if (items != null) {
-      List<Widget> sbmnu = [];
-      for (var i = 0; i < ((items?.length) ?? 0); i++) {
-        sbmnu.add(InkWell(
-          child: Padding(
-              padding: const EdgeInsets.all(15), child: Text(items![i])),
-        ));
+    double mw = 0;
+    for (var i = 0; i < ((items?.length) ?? 0); i++) {
+      TextPainter textPainter = TextPainter(
+          text: TextSpan(text: items![i]),
+          maxLines: 1,
+          textDirection: TextDirection.ltr)
+        ..layout(minWidth: 0, maxWidth: double.infinity);
+
+      if (mw < textPainter.size.width) {
+        mw = textPainter.size.width;
       }
-      subMenu = Material(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: sbmnu,
+
+      sbmnu.add(InkWell(
+        onTap: () {},
+        onHover: (value) {},
+        hoverColor: Colors.grey,
+        child:
+            Padding(padding: const EdgeInsets.all(15), child: Text(items![i])),
       ));
     }
+
+    maxWidth = mw;
   }
 
   @override
@@ -36,63 +45,70 @@ class _MainMenuButtonState extends State<MainMenuButton> {
   OverlayEntry? overlayEntry;
 
   void controllSubMenu() {
-    if (isHover || isSubMenuHover) {
-      if (!isMenuShown) {
-        if (widget.items != null) {
-          RenderBox box = context.findRenderObject() as RenderBox;
-          Offset position = box.localToGlobal(Offset.zero);
+    if (widget.items != null) {
+      if (isHover || isSubMenuHover) {
+        if (!isMenuShown) {
+          if (widget.items != null) {
+            RenderBox box = context.findRenderObject() as RenderBox;
+            Offset position = box.localToGlobal(Offset.zero);
 
-          overlayEntry = OverlayEntry(
-            builder: (BuildContext context) {
-              return Positioned(
-                  top: position.dy + box.size.height,
-                  left: position.dx,
-                  child: Material(
-                      child: InkWell(
-                    onTap: () {},
-                    onHover: (val) {
-                      setState(() {
-                        isSubMenuHover = val;
-                      });
+            overlayEntry = OverlayEntry(
+              builder: (BuildContext context) {
+                return Positioned(
+                    top: position.dy + box.size.height,
+                    left: position.dx,
+                    width: widget.maxWidth + 30,
+                    child: Material(
+                        child: InkWell(
+                      onTap: () {},
+                      onHover: (val) {
+                        setState(() {
+                          isSubMenuHover = val;
+                        });
 
-                      controllSubMenu();
-                    },
-                    child: widget.subMenu,
-                  )));
-            },
-          );
+                        controllSubMenu();
+                      },
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: widget.sbmnu,
+                      ),
+                    )));
+              },
+            );
 
-          isMenuShown = true;
+            isMenuShown = true;
 
-          Overlay.of(context)!.insert(overlayEntry!);
+            Overlay.of(context)!.insert(overlayEntry!);
+          }
         }
+      } else {
+        overlayEntry?.remove();
+        isMenuShown = false;
       }
-    } else {
-      overlayEntry?.remove();
-      isMenuShown = false;
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      hoverColor: Colors.grey,
-      onHover: (val) {
-        setState(() {
-          isHover = val;
-        });
+    return Container(
+        color: (isHover || isSubMenuHover) ? Colors.grey : Colors.white,
+        child: InkWell(
+          onHover: (val) {
+            setState(() {
+              isHover = val;
+            });
 
-        controllSubMenu();
-      },
-      onTap: () {
-        if (widget.route != null) {
-          Navigator.pushNamed(context, widget.route ?? '/');
-        }
-      },
-      child: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Text(widget.text),
-      ),
-    );
+            controllSubMenu();
+          },
+          onTap: () {
+            if (widget.route != null) {
+              Navigator.pushNamed(context, widget.route ?? '/');
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Text(widget.text),
+          ),
+        ));
   }
 }
