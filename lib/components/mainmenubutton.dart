@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class MainMenuButton extends StatefulWidget {
+  final String? icon;
   final String text;
   final List<String>? items;
   final String? route;
   late final List<Widget> sbmnu = [];
   late final double maxWidth;
 
-  MainMenuButton({super.key, required this.text, this.items, this.route}) {
+  MainMenuButton(
+      {super.key, required this.text, this.icon, this.items, this.route}) {
     double mw = 0;
     for (var i = 0; i < ((items?.length) ?? 0); i++) {
       TextPainter textPainter = TextPainter(
@@ -107,7 +110,21 @@ class _MainMenuButtonState extends State<MainMenuButton> {
           },
           child: Padding(
             padding: const EdgeInsets.all(15),
-            child: Text(widget.text),
+            child: (widget.icon != null)
+                ? Row(
+                    children: [
+                      SvgPicture.asset(
+                        widget.icon!,
+                        width: 25,
+                        clipBehavior: Clip.none,
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      Text(widget.text)
+                    ],
+                  )
+                : Text(widget.text),
           ),
         ));
   }

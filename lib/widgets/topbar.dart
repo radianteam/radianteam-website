@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:radianteam_website/components/mainmenubutton.dart';
 import 'package:radianteam_website/pages/components.dart';
 import 'package:radianteam_website/pages/contactus.dart';
@@ -24,10 +25,12 @@ class TopBar extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, '/');
               },
-              child: const Padding(
-                padding: EdgeInsets.all(10),
-                child: Text('Radian', style: TextStyle(fontSize: 20)),
-              ),
+              child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: SvgPicture.asset(
+                    'radian_logo.svg',
+                    width: 100,
+                  )),
             ),
             const Spacer(),
             MainMenuButton(
@@ -84,6 +87,15 @@ class TopBar extends StatelessWidget {
               text: 'Contact us',
               route: ContactUsPage.route,
             ),
+            MainMenuButton(
+              icon: 'lang_us.svg',
+              text: 'English',
+              items: const ['English', 'German'],
+              route: NonCommercialPage.route,
+            ),
+            const SizedBox(
+              width: 25,
+            )
           ],
         )
       ],
