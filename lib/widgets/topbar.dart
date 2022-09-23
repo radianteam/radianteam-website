@@ -28,7 +28,7 @@ class TopBar extends StatelessWidget {
               child: Padding(
                   padding: const EdgeInsets.all(15),
                   child: SvgPicture.asset(
-                    'radian_logo.svg',
+                    'images/radian_logo.svg',
                     width: 100,
                   )),
             ),
@@ -88,7 +88,7 @@ class TopBar extends StatelessWidget {
               route: ContactUsPage.route,
             ),
             MainMenuButton(
-              icon: 'lang_us.svg',
+              icon: 'images/lang_us.svg',
               text: 'English',
               items: const ['English', 'German'],
               route: NonCommercialPage.route,
