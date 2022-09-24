@@ -25,7 +25,7 @@ class TopBar extends StatelessWidget {
                 Navigator.pushNamed(context, '/');
               },
               child: Padding(
-                  padding: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.fromLTRB(25, 20, 25, 20),
                   child: SvgPicture.asset(
                     'images/radian_logo.svg',
                     width: 100,
@@ -108,7 +108,7 @@ class TopBar extends StatelessWidget {
                 Navigator.pushNamed(context, '/');
               },
               child: Padding(
-                  padding: const EdgeInsets.all(15),
+                  padding: const EdgeInsets.all(20),
                   child: SvgPicture.asset(
                     'images/radian_logo.svg',
                     width: 100,
