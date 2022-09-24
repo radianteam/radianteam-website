@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:radianteam_website/components/mainmenubutton.dart';
@@ -5,17 +7,14 @@ import 'package:radianteam_website/pages/components.dart';
 import 'package:radianteam_website/pages/contactus.dart';
 
 import 'package:radianteam_website/pages/framework.dart';
-import 'package:radianteam_website/pages/ideas.dart';
 import 'package:radianteam_website/pages/noncommercial.dart';
 import 'package:radianteam_website/pages/projects.dart';
 import 'package:radianteam_website/pages/sourcecode.dart';
-import 'package:radianteam_website/pages/team.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key});
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildFullBar(BuildContext context) {
     return Material(
         child: Column(
       children: [
@@ -72,14 +71,6 @@ class TopBar extends StatelessWidget {
               route: NonCommercialPage.route,
             ),
             MainMenuButton(
-              text: 'Ideas',
-              route: IdeasPage.route,
-            ),
-            MainMenuButton(
-              text: 'Team',
-              route: TeamPage.route,
-            ),
-            MainMenuButton(
               text: 'Source code',
               route: SourceCodePage.route,
             ),
@@ -92,13 +83,55 @@ class TopBar extends StatelessWidget {
               text: 'English',
               items: const ['English', 'German'],
               route: NonCommercialPage.route,
-            ),
-            const SizedBox(
-              width: 25,
             )
           ],
         )
       ],
     ));
+  }
+
+  Widget _buildHiddenBar(BuildContext context) {
+    return Material(
+        child: Column(
+      children: [
+        Row(
+          children: [
+            const InkWell(
+              child: Padding(
+                padding: EdgeInsets.fromLTRB(15, 15, 0, 15),
+                child: Icon(Icons.menu),
+              ),
+            ),
+            const Spacer(),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, '/');
+              },
+              child: Padding(
+                  padding: const EdgeInsets.all(15),
+                  child: SvgPicture.asset(
+                    'images/radian_logo.svg',
+                    width: 100,
+                  )),
+            ),
+            const Spacer(),
+            MainMenuButton(
+              icon: 'images/lang_us.svg',
+              items: const ['English', 'German'],
+              route: NonCommercialPage.route,
+            ),
+          ],
+        )
+      ],
+    ));
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    if (MediaQuery.of(context).size.width < 900) {
+      return _buildHiddenBar(context);
+    }
+
+    return _buildFullBar(context);
   }
 }
