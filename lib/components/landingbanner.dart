@@ -7,27 +7,24 @@ class LandingBanner extends StatelessWidget {
   final String description;
   final String buttonText;
   final String picture;
+  final Decoration? decoration;
+  final Color? textColor;
 
   const LandingBanner(
       {super.key,
       required this.caption,
       required this.description,
       required this.buttonText,
-      required this.picture});
+      required this.picture,
+      this.decoration,
+      this.textColor});
 
   @override
   Widget build(BuildContext context) {
     double baseSize = MediaQuery.of(context).size.width / 3;
 
     return Container(
-      decoration: const BoxDecoration(
-          gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-            Color.fromARGB(255, 101, 16, 161),
-            Color.fromARGB(255, 144, 57, 206)
-          ])),
+      decoration: decoration,
       child: Row(
         children: [
           const Spacer(),
@@ -39,9 +36,9 @@ class LandingBanner extends StatelessWidget {
               ),
               Text(
                 caption,
-                style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 46,
+                style: TextStyle(
+                    color: textColor ?? Colors.white,
+                    fontSize: baseSize / 10,
                     decoration: TextDecoration.none),
                 textAlign: TextAlign.left,
               ),
@@ -50,9 +47,9 @@ class LandingBanner extends StatelessWidget {
               ),
               Text(
                 description,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
+                style: TextStyle(
+                  color: textColor ?? Colors.white,
+                  fontSize: baseSize / 25,
                   decoration: TextDecoration.none,
                 ),
                 textAlign: TextAlign.left,
@@ -60,17 +57,15 @@ class LandingBanner extends StatelessWidget {
               SizedBox(
                 height: baseSize / 10,
               ),
-              ElevatedButton(
-                  style: const ButtonStyle(
-                      backgroundColor:
-                          MaterialStatePropertyAll<Color>(Colors.white),
-                      fixedSize:
-                          MaterialStatePropertyAll<Size>(Size.fromHeight(50))),
-                  onPressed: () {},
-                  child: Text(
-                    buttonText,
-                    style: const TextStyle(color: Colors.black, fontSize: 18),
-                  )),
+              Material(
+                  borderRadius: BorderRadius.circular(baseSize / 37),
+                  child: Padding(
+                      padding: EdgeInsets.all(baseSize / 25),
+                      child: Text(
+                        buttonText,
+                        style: TextStyle(
+                            color: Colors.black, fontSize: baseSize / 20),
+                      ))),
               SizedBox(
                 height: baseSize / 6,
               )
@@ -78,7 +73,8 @@ class LandingBanner extends StatelessWidget {
           ),
           const Spacer(),
           Padding(
-              padding: const EdgeInsets.fromLTRB(50, 50, 0, 50),
+              padding: EdgeInsets.fromLTRB(
+                  baseSize / 20, baseSize / 20, 0, baseSize / 20),
               child: SvgPicture.asset(picture,
                   width: baseSize / 1.2, color: Colors.white)),
           const Spacer()

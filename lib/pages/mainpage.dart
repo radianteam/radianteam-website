@@ -17,6 +17,14 @@ class MainPage extends StatelessWidget {
             'Try nanoservice framework, use ready-made components,\nenjoy our projects, join our community!',
         buttonText: 'Contact us',
         picture: 'images/banner_bird.svg',
+        decoration: BoxDecoration(
+            gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+              Color.fromARGB(255, 101, 16, 161),
+              Color.fromARGB(255, 144, 57, 206)
+            ])),
       )
     ]);
   }
