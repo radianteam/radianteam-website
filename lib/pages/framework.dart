@@ -9,9 +9,17 @@ class FrameworkPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         const TopBar(),
-        const Text('Framework'),
+        Container(
+            width: double.infinity,
+            color: Colors.white,
+            child: const Center(
+                child: Text('Framework',
+                    style: TextStyle(
+                      backgroundColor: Colors.white,
+                    )))),
         Expanded(
             child: Container(
           color: Colors.purple,
