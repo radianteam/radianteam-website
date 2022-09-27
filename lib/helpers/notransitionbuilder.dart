@@ -11,6 +11,9 @@ class NoTransitionsBuilder extends PageTransitionsBuilder {
     Animation<double> secondaryAnimation,
     Widget? child,
   ) {
-    return child!;
+    return FadeTransition(
+      opacity: animation,
+      child: child,
+    );
   }
 }
