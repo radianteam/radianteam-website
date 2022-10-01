@@ -10,10 +10,7 @@ import 'package:radianteam_website/pages/projects.dart';
 import 'package:radianteam_website/pages/sourcecode.dart';
 import 'package:radianteam_website/pages/team.dart';
 
-import 'package:flutter_web_plugins/url_strategy.dart';
-
 void main() {
-  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
