@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:radianteam_website/widgets/mainmenu/mainmenufull.dart';
 import 'package:radianteam_website/widgets/mainmenu/mainmenumobile.dart';
 
-import '../helpers/responsive.dart';
+import '../../helpers/responsive.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key});

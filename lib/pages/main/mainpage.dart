@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:radianteam_website/components/landingbanner.dart';
-import 'package:radianteam_website/widgets/topbar.dart';
+import 'package:radianteam_website/widgets/topbar/topbar.dart';
 
 class MainPage extends StatelessWidget {
   static const String route = '/';

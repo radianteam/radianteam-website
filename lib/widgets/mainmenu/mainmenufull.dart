@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'package:radianteam_website/components/mainmenubutton.dart';
-import 'package:radianteam_website/pages/components.dart';
-import 'package:radianteam_website/pages/contactus.dart';
-import 'package:radianteam_website/pages/framework.dart';
-import 'package:radianteam_website/pages/noncommercial.dart';
-import 'package:radianteam_website/pages/projects.dart';
-import 'package:radianteam_website/pages/sourcecode.dart';
+import 'package:radianteam_website/pages/components/components.dart';
+import 'package:radianteam_website/pages/contactus/contactus.dart';
+import 'package:radianteam_website/pages/framework/framework.dart';
+import 'package:radianteam_website/pages/noncommercial/noncommercial.dart';
+import 'package:radianteam_website/pages/projects/projects.dart';
+import 'package:radianteam_website/pages/sourcecode/sourcecode.dart';
 
 class MainMenuFull extends StatelessWidget {
   const MainMenuFull({super.key});
