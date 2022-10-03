@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/widgets/topbar.dart';
+import 'package:radianteam_website/widgets/topbar/topbar.dart';
 
 class ComponentsPage extends StatelessWidget {
   static const String route = '/components';

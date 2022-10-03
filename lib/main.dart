@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:radianteam_website/helpers/notransitionbuilder.dart';
-import 'package:radianteam_website/pages/components.dart';
-import 'package:radianteam_website/pages/contactus.dart';
-import 'package:radianteam_website/pages/framework.dart';
-import 'package:radianteam_website/pages/ideas.dart';
-import 'package:radianteam_website/pages/mainpage.dart';
-import 'package:radianteam_website/pages/noncommercial.dart';
-import 'package:radianteam_website/pages/projects.dart';
-import 'package:radianteam_website/pages/sourcecode.dart';
-import 'package:radianteam_website/pages/team.dart';
+import 'package:radianteam_website/pages/components/components.dart';
+import 'package:radianteam_website/pages/contactus/contactus.dart';
+import 'package:radianteam_website/pages/framework/framework.dart';
+import 'package:radianteam_website/pages/roadmap/roadmap.dart';
+import 'package:radianteam_website/pages/main/mainpage.dart';
+import 'package:radianteam_website/pages/noncommercial/noncommercial.dart';
+import 'package:radianteam_website/pages/projects/projects.dart';
+import 'package:radianteam_website/pages/sourcecode/sourcecode.dart';
+import 'package:radianteam_website/pages/team/team.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           ComponentsPage.route: (context) => const ComponentsPage(),
           ProjectsPage.route: (context) => const ProjectsPage(),
           NonCommercialPage.route: (context) => const NonCommercialPage(),
-          IdeasPage.route: (context) => const IdeasPage(),
+          RoadmapPage.route: (context) => const RoadmapPage(),
           TeamPage.route: (context) => const TeamPage(),
           SourceCodePage.route: (context) => const SourceCodePage(),
           ContactUsPage.route: (context) => const ContactUsPage()

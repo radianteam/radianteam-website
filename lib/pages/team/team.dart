@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/widgets/topbar.dart';
+import 'package:radianteam_website/widgets/topbar/topbar.dart';
 
-class IdeasPage extends StatelessWidget {
-  static const String route = '/ideas';
+class TeamPage extends StatelessWidget {
+  static const String route = '/team';
 
-  const IdeasPage({super.key});
+  const TeamPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         const TopBar(),
-        const Text('Ideas'),
+        const Text('Team'),
         Expanded(
             child: Container(
-          color: Colors.orange,
+          color: Colors.indigo,
         ))
       ],
     );
