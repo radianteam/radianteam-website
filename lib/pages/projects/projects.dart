@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/widgets/topbar/topbar.dart';
 
 class ProjectsPage extends StatelessWidget {
+  static const String title = 'Projects';
   static const String route = '/projects';
 
   const ProjectsPage({super.key});
@@ -10,7 +10,6 @@ class ProjectsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TopBar(),
         const Text('Projects'),
         Expanded(
             child: Container(
