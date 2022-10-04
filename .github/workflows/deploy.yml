@@ -16,7 +16,7 @@ jobs:
           channel: 'stable'
       - run: flutter pub get
       - name: Build
-        run: flutter build web
+        run: flutter build web --release
       - name: Deploy
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOY_KEY }}

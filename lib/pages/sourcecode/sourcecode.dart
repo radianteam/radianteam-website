@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/widgets/topbar/topbar.dart';
 
 class SourceCodePage extends StatelessWidget {
+  static const String title = 'Source code';
   static const String route = '/sourcecode';
 
   const SourceCodePage({super.key});
@@ -10,7 +10,6 @@ class SourceCodePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TopBar(),
         const Text('Source code'),
         Expanded(
             child: Container(

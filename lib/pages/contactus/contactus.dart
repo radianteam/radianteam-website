@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/widgets/topbar/topbar.dart';
 
 class ContactUsPage extends StatelessWidget {
+  static const String title = 'Contact us';
   static const String route = '/contactus';
 
   const ContactUsPage({super.key});
@@ -10,7 +10,6 @@ class ContactUsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const TopBar(),
         const Text('Contact us'),
         Expanded(
             child: Container(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/widgets/topbar/topbar.dart';
 
 class FrameworkPage extends StatelessWidget {
+  static const String title = 'Framework';
   static const String route = '/framework';
 
   const FrameworkPage({super.key});
@@ -11,19 +11,22 @@ class FrameworkPage extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        const TopBar(),
-        Container(
-            width: double.infinity,
-            color: Colors.white,
-            child: const Center(
-                child: Text('Framework',
-                    style: TextStyle(
-                      backgroundColor: Colors.white,
-                    )))),
         Expanded(
-            child: Container(
-          color: Colors.purple,
-        ))
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                    width: double.infinity,
+                    color: Colors.white,
+                    child: const Center(
+                        child: Text('Framework',
+                            style: TextStyle(
+                              backgroundColor: Colors.white,
+                            )))),
+              ],
+            ),
+          ),
+        )
       ],
     );
   }

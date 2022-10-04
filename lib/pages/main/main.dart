@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:radianteam_website/components/landingbanner.dart';
-import 'package:radianteam_website/widgets/topbar/topbar.dart';
+import 'package:radianteam_website/widgets/landingbanner/landingbanner.dart';
 
 class MainPage extends StatelessWidget {
+  static const String title = 'Radian';
   static const String route = '/';
 
   const MainPage({super.key});
@@ -10,7 +10,6 @@ class MainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: const [
-      TopBar(),
       LandingBanner(
         caption: 'Cloud native framework,\nlibraries and projects',
         description:
