@@ -5,6 +5,8 @@ import 'package:radianteam_website/controllers/navigationcontroller.dart';
 import 'package:radianteam_website/helpers/notransitionbuilder.dart';
 import 'package:radianteam_website/layouts/layout.dart';
 import 'package:radianteam_website/pages/main/main.dart';
+import 'package:radianteam_website/constants/controllers.dart';
+import 'package:radianteam_website/routing/router.dart';
 
 void main() {
   Get.put(MainMenuController());
@@ -25,8 +27,10 @@ class MyApp extends StatelessWidget {
         for (final platform in TargetPlatform.values)
           platform: const NoTransitionsBuilder()
       })),
-      home: const SiteLayout(),
       initialRoute: MainPage.route,
+      builder: (context, child) => const SiteLayout(),
+      navigatorKey: navigationController.navigationKey,
+      onGenerateRoute: generateRoute,
     );
   }
 }
