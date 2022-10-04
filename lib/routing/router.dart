@@ -12,28 +12,28 @@ import 'package:radianteam_website/pages/team/team.dart';
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case MainPage.route:
-      return _getPageRoute(const MainPage());
+      return _getPageRoute(const MainPage(), settings);
     case FrameworkPage.route:
-      return _getPageRoute(const FrameworkPage());
+      return _getPageRoute(const FrameworkPage(), settings);
     case ComponentsPage.route:
-      return _getPageRoute(const ComponentsPage());
+      return _getPageRoute(const ComponentsPage(), settings);
     case ProjectsPage.route:
-      return _getPageRoute(const ProjectsPage());
+      return _getPageRoute(const ProjectsPage(), settings);
     case NonCommercialPage.route:
-      return _getPageRoute(const NonCommercialPage());
+      return _getPageRoute(const NonCommercialPage(), settings);
     case RoadmapPage.route:
-      return _getPageRoute(const RoadmapPage());
+      return _getPageRoute(const RoadmapPage(), settings);
     case TeamPage.route:
-      return _getPageRoute(const TeamPage());
+      return _getPageRoute(const TeamPage(), settings);
     case SourceCodePage.route:
-      return _getPageRoute(const SourceCodePage());
+      return _getPageRoute(const SourceCodePage(), settings);
     case ContactUsPage.route:
-      return _getPageRoute(const ContactUsPage());
+      return _getPageRoute(const ContactUsPage(), settings);
     default:
-      return _getPageRoute(const MainPage());
+      return _getPageRoute(const MainPage(), settings);
   }
 }
 
-PageRoute _getPageRoute(Widget child) {
-  return MaterialPageRoute(builder: (context) => child);
+PageRoute _getPageRoute(Widget child, RouteSettings settings) {
+  return MaterialPageRoute(builder: (context) => child, settings: settings);
 }

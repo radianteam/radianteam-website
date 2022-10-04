@@ -16,7 +16,7 @@ class MainMenuFull extends StatelessWidget {
           InkWell(
             onTap: () {
               if (items[i].route != null) {
-                navigationController.navigateTo(items[i].route!);
+                navigationController.navigateTo(items[i].text, items[i].route!);
               }
             },
             child: Padding(

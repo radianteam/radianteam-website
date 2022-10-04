@@ -18,7 +18,7 @@ class FullLayout extends StatelessWidget {
         children: [
           InkWell(
             onTap: () {
-              navigationController.navigateTo(MainPage.route);
+              navigationController.navigateTo(MainPage.title, MainPage.route);
             },
             child: Padding(
                 padding:
@@ -34,7 +34,7 @@ class FullLayout extends StatelessWidget {
               children: [MainMenuFull(items: mainMenuContent)]),
           InkWell(
             onTap: () {
-              navigationController.navigateTo(MainPage.route);
+              navigationController.navigateTo(MainPage.title, MainPage.route);
             },
             child: Padding(
                 padding:
