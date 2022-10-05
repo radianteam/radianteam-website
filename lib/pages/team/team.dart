@@ -8,14 +8,17 @@ class TeamPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Team'),
-        Expanded(
-            child: Container(
-          color: Colors.indigo,
-        ))
-      ],
-    );
+    return Title(
+        title: "Radian - Team",
+        color: Colors.white,
+        child: Column(
+          children: [
+            const Text('Team'),
+            Expanded(
+                child: Container(
+              color: Colors.indigo,
+            ))
+          ],
+        ));
   }
 }

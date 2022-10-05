@@ -8,26 +8,30 @@ class FrameworkPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        Expanded(
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Container(
-                    width: double.infinity,
-                    color: Colors.white,
-                    child: const Center(
-                        child: Text('Framework',
-                            style: TextStyle(
-                              backgroundColor: Colors.white,
-                            )))),
-              ],
+    return Title(
+      title: "Radian - Framework",
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                      width: double.infinity,
+                      color: Colors.white,
+                      child: const Center(
+                          child: Text('Framework',
+                              style: TextStyle(
+                                backgroundColor: Colors.white,
+                              )))),
+                ],
+              ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }

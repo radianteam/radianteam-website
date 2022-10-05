@@ -8,14 +8,17 @@ class RoadmapPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Roadmap'),
-        Expanded(
-            child: Container(
-          color: Colors.orange,
-        ))
-      ],
-    );
+    return Title(
+        title: "Radian - Roadmap",
+        color: Colors.white,
+        child: Column(
+          children: [
+            const Text('Roadmap'),
+            Expanded(
+                child: Container(
+              color: Colors.orange,
+            ))
+          ],
+        ));
   }
 }

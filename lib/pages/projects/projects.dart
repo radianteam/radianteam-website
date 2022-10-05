@@ -8,14 +8,17 @@ class ProjectsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Projects'),
-        Expanded(
-            child: Container(
-          color: Colors.lightBlue,
-        ))
-      ],
-    );
+    return Title(
+        title: "Radian - Projects",
+        color: Colors.white,
+        child: Column(
+          children: [
+            const Text('Projects'),
+            Expanded(
+                child: Container(
+              color: Colors.lightBlue,
+            ))
+          ],
+        ));
   }
 }
