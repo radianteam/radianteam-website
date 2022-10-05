@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      title: "Radian",
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           pageTransitionsTheme: PageTransitionsTheme(builders: {

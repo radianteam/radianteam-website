@@ -8,14 +8,17 @@ class ContactUsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Contact us'),
-        Expanded(
-            child: Container(
-          color: Colors.green,
-        ))
-      ],
-    );
+    return Title(
+        title: "Radian - Contact us",
+        color: Colors.white,
+        child: Column(
+          children: [
+            const Text('Contact us'),
+            Expanded(
+                child: Container(
+              color: Colors.green,
+            ))
+          ],
+        ));
   }
 }

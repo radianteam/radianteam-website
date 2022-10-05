@@ -8,14 +8,17 @@ class ComponentsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Components'),
-        Expanded(
-            child: Container(
-          color: Colors.grey,
-        ))
-      ],
-    );
+    return Title(
+        title: "Radian - Components",
+        color: Colors.white,
+        child: Column(
+          children: [
+            const Text('Components'),
+            Expanded(
+                child: Container(
+              color: Colors.grey,
+            ))
+          ],
+        ));
   }
 }

@@ -8,14 +8,17 @@ class SourceCodePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Source code'),
-        Expanded(
-            child: Container(
-          color: Colors.white,
-        ))
-      ],
-    );
+    return Title(
+        title: "Radian - Source code",
+        color: Colors.white,
+        child: Column(
+          children: [
+            const Text('Source code'),
+            Expanded(
+                child: Container(
+              color: Colors.white,
+            ))
+          ],
+        ));
   }
 }

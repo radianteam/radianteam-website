@@ -8,14 +8,17 @@ class NonCommercialPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        const Text('Non-commercial'),
-        Expanded(
-            child: Container(
-          color: Colors.brown,
-        ))
-      ],
-    );
+    return Title(
+        title: "Radian - Non-commercial",
+        color: Colors.white,
+        child: Column(
+          children: [
+            const Text('Non-commercial'),
+            Expanded(
+                child: Container(
+              color: Colors.brown,
+            ))
+          ],
+        ));
   }
 }
