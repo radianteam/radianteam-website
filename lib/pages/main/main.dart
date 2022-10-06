@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:radianteam_website/widgets/landingbanner/landingbanner.dart';
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
 
 class MainPage extends StatelessWidget {
   static const String title = 'Radian';
@@ -12,7 +13,8 @@ class MainPage extends StatelessWidget {
     return Title(
         title: "Radian - Main",
         color: Colors.white,
-        child: Column(children: const [
+        child: SingleChildScrollView(
+            child: Column(children: const [
           LandingBanner(
             caption: 'Cloud native framework,\nlibraries and projects',
             description:
@@ -27,7 +29,8 @@ class MainPage extends StatelessWidget {
                   Color.fromARGB(255, 101, 16, 161),
                   Color.fromARGB(255, 144, 57, 206)
                 ])),
-          )
-        ]));
+          ),
+          FooterFull()
+        ])));
   }
 }
