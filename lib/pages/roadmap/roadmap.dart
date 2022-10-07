@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
+
 class RoadmapPage extends StatelessWidget {
   static const String title = 'Roadmap';
   static const String route = '/roadmap';
@@ -11,14 +13,9 @@ class RoadmapPage extends StatelessWidget {
     return Title(
         title: "Radian - Roadmap",
         color: Colors.white,
-        child: Column(
-          children: [
-            const Text('Roadmap'),
-            Expanded(
-                child: Container(
-              color: Colors.orange,
-            ))
-          ],
-        ));
+        child: SingleChildScrollView(
+            child: Column(
+          children: const [Text('Roadmap'), FooterFull()],
+        )));
   }
 }

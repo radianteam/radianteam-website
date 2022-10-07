@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
+
 class ContactUsPage extends StatelessWidget {
   static const String title = 'Contact us';
   static const String route = '/contactus';
@@ -11,14 +13,9 @@ class ContactUsPage extends StatelessWidget {
     return Title(
         title: "Radian - Contact us",
         color: Colors.white,
-        child: Column(
-          children: [
-            const Text('Contact us'),
-            Expanded(
-                child: Container(
-              color: Colors.green,
-            ))
-          ],
-        ));
+        child: SingleChildScrollView(
+            child: Column(
+          children: const [Text('Contact us'), FooterFull()],
+        )));
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
+
 class TeamPage extends StatelessWidget {
   static const String title = 'Team';
   static const String route = '/team';
@@ -11,14 +13,9 @@ class TeamPage extends StatelessWidget {
     return Title(
         title: "Radian - Team",
         color: Colors.white,
-        child: Column(
-          children: [
-            const Text('Team'),
-            Expanded(
-                child: Container(
-              color: Colors.indigo,
-            ))
-          ],
-        ));
+        child: SingleChildScrollView(
+            child: Column(
+          children: const [Text('Team'), FooterFull()],
+        )));
   }
 }
