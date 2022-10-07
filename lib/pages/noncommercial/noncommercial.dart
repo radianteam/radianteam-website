@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
+
 class NonCommercialPage extends StatelessWidget {
   static const String title = 'Non-commercial';
   static const String route = '/noncommercial';
@@ -11,14 +13,9 @@ class NonCommercialPage extends StatelessWidget {
     return Title(
         title: "Radian - Non-commercial",
         color: Colors.white,
-        child: Column(
-          children: [
-            const Text('Non-commercial'),
-            Expanded(
-                child: Container(
-              color: Colors.brown,
-            ))
-          ],
-        ));
+        child: SingleChildScrollView(
+            child: Column(
+          children: const [Text('Non-commercial'), FooterFull()],
+        )));
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
+
 class SourceCodePage extends StatelessWidget {
   static const String title = 'Source code';
   static const String route = '/sourcecode';
@@ -11,14 +13,9 @@ class SourceCodePage extends StatelessWidget {
     return Title(
         title: "Radian - Source code",
         color: Colors.white,
-        child: Column(
-          children: [
-            const Text('Source code'),
-            Expanded(
-                child: Container(
-              color: Colors.white,
-            ))
-          ],
-        ));
+        child: SingleChildScrollView(
+            child: Column(
+          children: const [Text('Source code'), FooterFull()],
+        )));
   }
 }

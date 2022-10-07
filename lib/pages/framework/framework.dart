@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
 
 class FrameworkPage extends StatelessWidget {
   static const String title = 'Framework';
@@ -21,7 +22,8 @@ class FrameworkPage extends StatelessWidget {
                     child: Text('Framework',
                         style: TextStyle(
                           backgroundColor: Colors.white,
-                        ))))
+                        )))),
+            const FooterFull()
           ],
         ),
       ),

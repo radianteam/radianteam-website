@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:radianteam_website/widgets/footer/footerfull.dart';
+
 class ComponentsPage extends StatelessWidget {
   static const String title = 'Components';
   static const String route = '/components';
@@ -11,14 +13,9 @@ class ComponentsPage extends StatelessWidget {
     return Title(
         title: "Radian - Components",
         color: Colors.white,
-        child: Column(
-          children: [
-            const Text('Components'),
-            Expanded(
-                child: Container(
-              color: Colors.grey,
-            ))
-          ],
-        ));
+        child: SingleChildScrollView(
+            child: Column(
+          children: const [Text('Components'), FooterFull()],
+        )));
   }
 }
