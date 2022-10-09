@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:radianteam_website/widgets/footer/footerfull.dart';
+import 'package:radianteam_website/widgets/landingbanner/landingbanner.dart';
 
 class ComponentsPage extends StatelessWidget {
   static const String title = 'Components';
@@ -15,7 +16,24 @@ class ComponentsPage extends StatelessWidget {
         color: Colors.white,
         child: SingleChildScrollView(
             child: Column(
-          children: const [Text('Components'), FooterFull()],
+          children: const [
+            LandingBanner(
+              caption: 'Use ready-made microservices\nand business solutions',
+              description:
+                  'Powerful notifications, API gateway and headless CMS\nfor your own projects! Free and open-source!',
+              buttonText: 'Contact us',
+              picture: 'images/banner_bird.svg',
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                    Color.fromARGB(255, 101, 16, 161),
+                    Color.fromARGB(255, 144, 57, 206)
+                  ])),
+            ),
+            FooterFull()
+          ],
         )));
   }
 }

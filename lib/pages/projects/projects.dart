@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:radianteam_website/widgets/footer/footerfull.dart';
+import 'package:radianteam_website/widgets/landingbanner/landingbanner.dart';
 
 class ProjectsPage extends StatelessWidget {
   static const String title = 'Projects';
@@ -15,7 +16,25 @@ class ProjectsPage extends StatelessWidget {
         color: Colors.white,
         child: SingleChildScrollView(
             child: Column(
-          children: const [Text('Projects'), FooterFull()],
+          children: const [
+            LandingBanner(
+              caption:
+                  'SaaS and self-hosted solutions\nfor business and education',
+              description:
+                  'Setup your own instance of our projects or\nuse them as a subscription service!',
+              buttonText: 'Contact us',
+              picture: 'images/banner_bird.svg',
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                    Color.fromARGB(255, 101, 16, 161),
+                    Color.fromARGB(255, 144, 57, 206)
+                  ])),
+            ),
+            FooterFull()
+          ],
         )));
   }
 }
