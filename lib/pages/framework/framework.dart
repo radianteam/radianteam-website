@@ -20,7 +20,8 @@ class FrameworkPage extends StatelessWidget {
               caption: 'Nanoservice framework\nand ready-made solutions',
               description:
                   'Build microservices and monoliths with REPP\ninteractions and ready-made workers and adapters!',
-              buttonText: 'Contact us',
+              buttonText: 'Source code',
+              buttonExternalLink: "https://github.com/radianteam/framework",
               picture: 'images/banner_bird.svg',
               decoration: BoxDecoration(
                   gradient: LinearGradient(
