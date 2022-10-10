@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
+import 'dart:html' as html;
 
 class LandingBanner extends StatelessWidget {
   final String caption;
   final String description;
   final String buttonText;
+  final String? buttonExternalLink;
   final String picture;
   final Decoration? decoration;
   final Color? textColor;
@@ -17,7 +19,8 @@ class LandingBanner extends StatelessWidget {
       required this.buttonText,
       required this.picture,
       this.decoration,
-      this.textColor});
+      this.textColor,
+      this.buttonExternalLink});
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +62,18 @@ class LandingBanner extends StatelessWidget {
               ),
               Material(
                   borderRadius: BorderRadius.circular(baseSize / 37),
-                  child: Padding(
-                      padding: EdgeInsets.all(baseSize / 25),
-                      child: Text(
-                        buttonText,
-                        style: TextStyle(
-                            color: Colors.black, fontSize: baseSize / 20),
-                      ))),
+                  child: InkWell(
+                    onTap: (() {
+                      html.window.open(buttonExternalLink!, 'new tab');
+                    }),
+                    child: Padding(
+                        padding: EdgeInsets.all(baseSize / 25),
+                        child: Text(
+                          buttonText,
+                          style: TextStyle(
+                              color: Colors.black, fontSize: baseSize / 20),
+                        )),
+                  )),
               SizedBox(
                 height: baseSize / 6,
               )
