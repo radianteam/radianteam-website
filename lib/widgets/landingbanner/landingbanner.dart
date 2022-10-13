@@ -24,7 +24,7 @@ class LandingBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double baseSize = MediaQuery.of(context).size.width / 3;
+    double baseSizeW = MediaQuery.of(context).size.width / 3;
 
     return Container(
       decoration: decoration,
@@ -35,56 +35,62 @@ class LandingBanner extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(
-                height: baseSize / 6,
-              ),
-              Text(
-                caption,
-                style: TextStyle(
-                    color: textColor ?? Colors.white,
-                    fontSize: baseSize / 10,
-                    decoration: TextDecoration.none),
-                textAlign: TextAlign.left,
+                height: baseSizeW / 6,
               ),
               SizedBox(
-                height: baseSize / 10,
-              ),
-              Text(
-                description,
-                style: TextStyle(
-                  color: textColor ?? Colors.white,
-                  fontSize: baseSize / 25,
-                  decoration: TextDecoration.none,
+                width: baseSizeW * 1.3,
+                child: Text(
+                  caption,
+                  style: TextStyle(
+                      color: textColor ?? Colors.white,
+                      fontSize: baseSizeW / 10,
+                      decoration: TextDecoration.none),
+                  textAlign: TextAlign.left,
                 ),
-                textAlign: TextAlign.left,
               ),
               SizedBox(
-                height: baseSize / 10,
+                height: baseSizeW / 10,
+              ),
+              SizedBox(
+                width: baseSizeW * 1.3,
+                child: Text(
+                  description,
+                  style: TextStyle(
+                    color: textColor ?? Colors.white,
+                    fontSize: baseSizeW / 25,
+                    decoration: TextDecoration.none,
+                  ),
+                  textAlign: TextAlign.left,
+                ),
+              ),
+              SizedBox(
+                height: baseSizeW / 10,
               ),
               Material(
-                  borderRadius: BorderRadius.circular(baseSize / 37),
+                  borderRadius: BorderRadius.circular(baseSizeW / 37),
                   child: InkWell(
                     onTap: (() {
                       html.window.open(buttonExternalLink!, 'new tab');
                     }),
                     child: Padding(
-                        padding: EdgeInsets.all(baseSize / 25),
+                        padding: EdgeInsets.all(baseSizeW / 25),
                         child: Text(
                           buttonText,
                           style: TextStyle(
-                              color: Colors.black, fontSize: baseSize / 20),
+                              color: Colors.black, fontSize: baseSizeW / 20),
                         )),
                   )),
               SizedBox(
-                height: baseSize / 6,
+                height: baseSizeW / 6,
               )
             ],
           ),
           const Spacer(),
           Padding(
               padding: EdgeInsets.fromLTRB(
-                  baseSize / 20, baseSize / 20, 0, baseSize / 20),
+                  baseSizeW / 20, baseSizeW / 20, 0, baseSizeW / 20),
               child: SvgPicture.asset(picture,
-                  width: baseSize / 1.2, color: Colors.white)),
+                  width: baseSizeW / 1.2, color: Colors.white)),
           const Spacer()
         ],
       ),

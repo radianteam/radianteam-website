@@ -18,9 +18,9 @@ class NonCommercialPage extends StatelessWidget {
             child: Column(
           children: const [
             LandingBanner(
-              caption: 'Useful projects for free\nand fun',
+              caption: 'Useful projects for free and fun',
               description:
-                  'Explore example source code, test it, deploy it, share it!\nMake pull requests, do your best!',
+                  'Explore example source code, test it, deploy it, share it! Make pull requests, do your best!',
               buttonText: 'Contact us',
               picture: 'images/banner_bird.svg',
               decoration: BoxDecoration(

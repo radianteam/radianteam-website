@@ -17,9 +17,9 @@ class FrameworkPage extends StatelessWidget {
         child: Column(
           children: const [
             LandingBanner(
-              caption: 'Nanoservice framework\nand ready-made solutions',
+              caption: 'Nanoservice framework and ready-made solutions',
               description:
-                  'Build microservices and monoliths with REPP\ninteractions and ready-made workers and adapters!',
+                  'Build microservices and monoliths with REPP interactions and ready-made workers and adapters!',
               buttonText: 'Source code',
               buttonExternalLink: "https://github.com/radianteam/framework",
               picture: 'images/banner_bird.svg',

@@ -16,9 +16,9 @@ class MainPage extends StatelessWidget {
         child: SingleChildScrollView(
             child: Column(children: const [
           LandingBanner(
-            caption: 'Cloud native framework,\nlibraries and projects',
+            caption: 'Cloud native framework, libraries and projects',
             description:
-                'Try nanoservice framework, use ready-made components,\nenjoy our projects, join our community!',
+                'Try nanoservice framework, use ready-made components, enjoy our projects, join our community!',
             buttonText: 'Contact us',
             picture: 'images/banner_bird.svg',
             decoration: BoxDecoration(

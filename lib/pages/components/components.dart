@@ -18,9 +18,9 @@ class ComponentsPage extends StatelessWidget {
             child: Column(
           children: const [
             LandingBanner(
-              caption: 'Use ready-made microservices\nand business solutions',
+              caption: 'Ready-made microservices and business solutions',
               description:
-                  'Powerful notifications, API gateway and headless CMS\nfor your own projects! Free and open-source!',
+                  'Powerful notifications, API gateway and headless CMS for your own projects! Free and open-source!',
               buttonText: 'Contact us',
               picture: 'images/banner_bird.svg',
               decoration: BoxDecoration(
