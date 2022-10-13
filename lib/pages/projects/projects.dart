@@ -18,10 +18,9 @@ class ProjectsPage extends StatelessWidget {
             child: Column(
           children: const [
             LandingBanner(
-              caption:
-                  'SaaS and self-hosted solutions\nfor business and education',
+              caption: 'SaaS and self-hosted for business and education',
               description:
-                  'Setup your own instance of our projects or\nuse them as a subscription service!',
+                  'Setup your own instance of our projects or use them as a subscription service!',
               buttonText: 'Contact us',
               picture: 'images/banner_bird.svg',
               decoration: BoxDecoration(
