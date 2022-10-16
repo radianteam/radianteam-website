@@ -12,17 +12,21 @@ class FullLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+
     return Column(children: [
       Material(
           child: Row(
         children: [
+          SizedBox(
+            width: screenWidth * 0.1,
+          ),
           InkWell(
             onTap: () {
               navigationController.navigateTo(MainPage.title, MainPage.route);
             },
             child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 25),
                 child: SvgPicture.asset(
                   'images/radian_logo.svg',
                   width: 100,
@@ -38,7 +42,7 @@ class FullLayout extends StatelessWidget {
             },
             child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+                    const EdgeInsets.symmetric(vertical: 23, horizontal: 15),
                 child: Row(
                   children: [
                     SvgPicture.asset(
@@ -53,6 +57,9 @@ class FullLayout extends StatelessWidget {
                   ],
                 )),
           ),
+          SizedBox(
+            width: screenWidth * 0.1,
+          )
         ],
       )),
       Expanded(child: localNavigator())

@@ -20,7 +20,7 @@ class MainMenuFull extends StatelessWidget {
               }
             },
             child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 12),
+              padding: const EdgeInsets.symmetric(vertical: 27, horizontal: 12),
               child: (items[i].icon != null)
                   ? Row(
                       children: [
