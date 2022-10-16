@@ -24,13 +24,16 @@ class LandingBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double baseSizeW = MediaQuery.of(context).size.width / 3;
+    double baseSizeW = MediaQuery.of(context).size.width / 3; // TODO: remove
+    double screenWidth = MediaQuery.of(context).size.width;
 
     return Container(
       decoration: decoration,
       child: Row(
         children: [
-          const Spacer(),
+          SizedBox(
+            width: screenWidth * 0.1,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -91,7 +94,9 @@ class LandingBanner extends StatelessWidget {
                   baseSizeW / 20, baseSizeW / 20, 0, baseSizeW / 20),
               child: SvgPicture.asset(picture,
                   width: baseSizeW / 1.2, color: Colors.white)),
-          const Spacer()
+          SizedBox(
+            width: screenWidth * 0.1,
+          ),
         ],
       ),
     );

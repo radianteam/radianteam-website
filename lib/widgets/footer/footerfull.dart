@@ -13,6 +13,7 @@ class FooterFull extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Material(
       child: Container(
           padding: const EdgeInsets.fromLTRB(0, 50, 0, 5),
@@ -29,7 +30,9 @@ class FooterFull extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      const Spacer(),
+                      SizedBox(
+                        width: screenWidth * 0.1,
+                      ),
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
@@ -180,7 +183,9 @@ class FooterFull extends StatelessWidget {
                           )
                         ],
                       ),
-                      const Spacer()
+                      SizedBox(
+                        width: screenWidth * 0.1,
+                      )
                     ]),
                 const SizedBox(
                   height: 30,
