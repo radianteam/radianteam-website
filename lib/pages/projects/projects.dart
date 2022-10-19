@@ -28,8 +28,8 @@ class ProjectsPage extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Color.fromARGB(255, 101, 16, 161),
-                    Color.fromARGB(255, 144, 57, 206)
+                    Color.fromARGB(255, 100, 161, 16),
+                    Color.fromARGB(255, 77, 206, 57)
                   ])),
             ),
             FooterFull()
