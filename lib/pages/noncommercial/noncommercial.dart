@@ -28,8 +28,8 @@ class NonCommercialPage extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Color.fromARGB(255, 101, 16, 161),
-                    Color.fromARGB(255, 144, 57, 206)
+                    Color.fromARGB(255, 16, 142, 161),
+                    Color.fromARGB(255, 57, 189, 206)
                   ])),
             ),
             FooterFull()

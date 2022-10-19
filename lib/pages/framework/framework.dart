@@ -28,8 +28,8 @@ class FrameworkPage extends StatelessWidget {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                       colors: [
-                    Color.fromARGB(255, 101, 16, 161),
-                    Color.fromARGB(255, 144, 57, 206)
+                    Color.fromARGB(255, 28, 16, 161),
+                    Color.fromARGB(255, 82, 57, 206)
                   ])),
             ),
             FooterFull()
