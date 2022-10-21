@@ -1,1 +1,0 @@
-enum Languages { english, german }

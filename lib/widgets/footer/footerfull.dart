@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:radianteam_website/constants/controllers.dart';
 import 'package:radianteam_website/pages/components/components.dart';
@@ -7,6 +9,10 @@ import 'package:radianteam_website/pages/noncommercial/noncommercial.dart';
 import 'package:radianteam_website/pages/projects/projects.dart';
 import 'package:radianteam_website/pages/roadmap/roadmap.dart';
 import 'package:radianteam_website/pages/team/team.dart';
+
+import 'package:radianteam_website/constants/common.dart';
+import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class FooterFull extends StatelessWidget {
   const FooterFull({super.key});
@@ -161,20 +167,34 @@ class FooterFull extends StatelessWidget {
                           const SizedBox(height: 50),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: const [
-                              Icon(
-                                Icons.email,
-                                color: Colors.white,
-                                size: 32,
+                            children: [
+                              InkWell(
+                                onTap: () => {
+                                  () async {
+                                    try {
+                                      await launchUrlString(
+                                          "mailto:$projectMail");
+                                    } catch (e) {
+                                      await Clipboard.setData(
+                                          const ClipboardData(
+                                              text: projectMail));
+                                    }
+                                  }()
+                                },
+                                child: const Icon(
+                                  Icons.email,
+                                  color: Colors.white,
+                                  size: 32,
+                                ),
                               ),
-                              SizedBox(width: 15),
-                              Icon(
+                              const SizedBox(width: 15),
+                              const Icon(
                                 Icons.discord,
                                 color: Colors.white,
                                 size: 32,
                               ),
-                              SizedBox(width: 15),
-                              Icon(
+                              const SizedBox(width: 15),
+                              const Icon(
                                 Icons.telegram,
                                 color: Colors.white,
                                 size: 32,
